@@ -5,7 +5,7 @@
 ## Login   <lacomm_m@epitech.net>
 ## 
 ## Started on  Mon Mar  6 20:30:45 2017 Manon Lacommare
-## Last update Mon Mar  6 20:42:38 2017 Manon Lacommare
+## Last update Tue Mar 14 16:02:22 2017 Manon Lacommare
 ##
 
 NASM	=	nasm -f elf64
@@ -16,12 +16,14 @@ RM	=	rm -f
 
 NAME	=	libasm.so
 
-SRCS	=	strlen.asm	\
-		memset.asm
+SRCS	=	strlen.S	\
+		strchr.S	\
+		memset.S	\
+		memcpy.S	\
 
-OBJS	=	$(addprefix srcs/, $(SRCS:.asm=.o))
+OBJS	=	$(addprefix srcs/, $(SRCS:.S=.o))
 
-%.o:	 %.asm
+%.o:	 %.S
 	 @$(NASM) -o $@ $<
 
 $(NAME): $(OBJS)
