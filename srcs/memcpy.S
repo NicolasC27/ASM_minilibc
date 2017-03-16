@@ -5,13 +5,14 @@
 memcpy:
 	PUSH	RBP
 	MOV	RBP, RSP
-	MOV	RAX, RDI
-	MOV	RCX, RSI
+	MOV	RCX, 0
 
 loop:
-	CMP	RCX, 0
+	MOV	R10B, BYTE [RSI + RCX]
+	CMP	RCX, RDX
 	JE	end
-	DEC	RCX
+	MOV	BYTE [RDI + RCX], R10B
+	INC	RCX
 	JMP	loop
 
 end:
