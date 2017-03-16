@@ -3,8 +3,6 @@
 	GLOBAL	strcmp:function
 
 strcmp:
-	PUSH	RBP
-	MOV	RBP, RSP
 	MOV	RCX, 0
 
 loop:
@@ -15,5 +13,4 @@ loop:
 
 end:
 	MOV	RAX, RDI
-	LEAVE
 	RET

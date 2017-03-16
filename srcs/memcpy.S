@@ -3,8 +3,6 @@
 	GLOBAL	memcpy:function
 
 memcpy:
-	PUSH	RBP
-	MOV	RBP, RSP
 	MOV	RCX, 0
 
 loop:
@@ -19,10 +17,8 @@ loop:
 
 end_null:
 	MOV	RAX, 0
-	LEAVE
 	RET
 	
 end:
 	MOV	RAX, RDI
-	LEAVE
 	RET

@@ -1,15 +1,18 @@
-	BITS 	64
+	BITS	64
 	SECTION	.text
-	GLOBAL	strlen:function
+	GLOBAL	memset:function
 
-strlen:
+memset:
+	PUSH	RBP
+	MOV	RBP, RSP
 	MOV	RCX, 0
 
 loop:
-	CMP	BYTE [RDI + RCX], 0
+	CMP	RDX, RCX
 	JE	end
 	CMP	BYTE [RDI], 0
 	JE	end_null
+	MOV	BYTE [RDI + RCX], SIL
 	INC	RCX
 	JMP	loop
 
@@ -19,5 +22,6 @@ end_null:
 	RET
 	
 end:
-	MOV	RAX, RCX
+	MOV	RAX, RDI
+	LEAVE
 	RET

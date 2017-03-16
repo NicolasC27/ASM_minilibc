@@ -3,8 +3,6 @@
 	GLOBAL	memset:function
 
 memset:
-	PUSH	RBP
-	MOV	RBP, RSP
 	MOV	RCX, 0
 
 loop:
@@ -23,5 +21,4 @@ end_null:
 	
 end:
 	MOV	RAX, RDI
-	LEAVE
 	RET
