@@ -5,15 +5,15 @@
 strcmp:
 	PUSH	RBP
 	MOV	RBP, RSP
-	MOV	RDX, 0
+	MOV	RCX, 0
 
 loop:
-	CMP	BYTE[RDI + RDX], 0
+	CMP	BYTE[RDI + RCX], 0
 	JE	end
-	INC	RDX
+	INC	RCX
 	JMP	loop
 
 end:
-	MOV	RAX, RDI - RSI
+	MOV	RAX, RDI
 	LEAVE
 	RET

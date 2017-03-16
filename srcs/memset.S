@@ -10,10 +10,17 @@ memset:
 loop:
 	CMP	RDX, RCX
 	JE	end
+	CMP	BYTE [RDI], 0
+	JE	end_null
 	MOV	BYTE [RDI + RCX], SIL
 	INC	RCX
 	JMP	loop
 
+end_null:
+	MOV	RAX, 0
+	LEAVE
+	RET
+	
 end:
 	MOV	RAX, RDI
 	LEAVE

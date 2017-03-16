@@ -5,7 +5,7 @@
 ## Login   <lacomm_m@epitech.net>
 ## 
 ## Started on  Mon Mar  6 20:30:45 2017 Manon Lacommare
-## Last update Tue Mar 14 16:02:22 2017 Manon Lacommare
+## Last update Thu Mar 16 14:50:33 2017 Manon Lacommare
 ##
 
 NASM	=	nasm -f elf64
@@ -20,6 +20,7 @@ SRCS	=	strlen.S	\
 		strchr.S	\
 		memset.S	\
 		memcpy.S	\
+		memmove.S	\
 
 OBJS	=	$(addprefix srcs/, $(SRCS:.S=.o))
 
