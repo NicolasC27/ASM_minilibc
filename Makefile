@@ -21,6 +21,8 @@ SRCS	=	strlen.S	\
 		memset.S	\
 		memcpy.S	\
 		memmove.S	\
+		strstr.S	\
+		strpbrk.S
 
 OBJS	=	$(addprefix srcs/, $(SRCS:.S=.o))
 
