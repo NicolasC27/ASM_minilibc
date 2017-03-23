@@ -8,8 +8,6 @@ memset:
 loop:
 	CMP	RDX, RCX
 	JE	end
-	CMP	BYTE [RDI], 0
-	JE	end_null
 	MOV	BYTE [RDI + RCX], SIL
 	INC	RCX
 	JMP	loop

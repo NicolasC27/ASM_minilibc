@@ -6,16 +6,15 @@ strlen:
 	MOV	RCX, 0
 
 loop:
-	CMP	BYTE [RDI + RCX], 0
-	JE	end
 	CMP	BYTE [RDI], 0
 	JE	end_null
+	CMP	BYTE [RDI + RCX], 0
+	JE	end
 	INC	RCX
 	JMP	loop
 
 end_null:
 	MOV	RAX, 0
-	LEAVE
 	RET
 	
 end:

@@ -1,15 +1,17 @@
 	BITS	64
 	SECTION	.text
-	GLOBAL	strcmp:function
+	GLOBAL	strncmp:function
 
-strcmp:
+strncmp:
 	MOV	RCX, 0
 
 loop:
 	MOV	R8B, [RDI + RCX]
 	MOV	R9B, [RSI + RCX]
 	CMP	R8B, R9B
-	JNE	end
+	JE	end
+	CMP	RCX, RDX
+	JE	end_null
 	CMP	R9B, 0
 	JE	end_null
 	INC	RCX
