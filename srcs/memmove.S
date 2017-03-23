@@ -5,13 +5,21 @@
 memmove:
 	MOV	RCX, 0
 
-loop:	
+loop_inc:
 	CMP	RCX, RDX
-	JE	end
+	JE	loop_dec
 	MOV	R8B, BYTE [RSI + RCX]
-	MOV	BYTE [RDI + RCX], R8B
+	PUSH	R8
 	INC	RCX
-	JMP	loop
+	JMP	loop_inc
+
+loop_dec:
+	CMP	RCX, 0
+	JE	end
+	POP	R8
+	MOV	BYTE [RDI + RCX - 1], R8B
+	DEC	RCX
+	JMP	loop_dec
 
 end:
 	MOV	RAX, RDI
