@@ -5,7 +5,7 @@
 ## Login   <lacomm_m@epitech.net>
 ## 
 ## Started on  Mon Mar  6 20:30:45 2017 Manon Lacommare
-## Last update Wed Mar 22 22:43:28 2017 Manon Lacommare
+## Last update Thu Mar 23 16:14:28 2017 Manon Lacommare
 ##
 
 NASM	=	nasm -f elf64
@@ -23,6 +23,7 @@ SRCS	=	strlen.S	\
 		strcmp.S	\
 		memmove.S	\
 		strncmp.S	\
+		strcasecmp.S	\
 		strstr.S	\
 		strpbrk.S
 
