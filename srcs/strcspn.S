@@ -15,7 +15,7 @@ loop_find:
     cmp r8b, 0
     je loop_end
 
-    cmp byte [rdi], r10b
+    cmp byte [rdi], r8b
     je end
 
     inc rcx

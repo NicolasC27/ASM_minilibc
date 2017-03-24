@@ -5,7 +5,7 @@
 ## Login   <lacomm_m@epitech.net>
 ## 
 ## Started on  Mon Mar  6 20:30:45 2017 Manon Lacommare
-## Last update Thu Mar 23 16:14:28 2017 Manon Lacommare
+## Last update Fri Mar 24 12:04:53 2017 Nicolas
 ##
 
 NASM	=	nasm -f elf64
@@ -25,7 +25,9 @@ SRCS	=	strlen.S	\
 		strncmp.S	\
 		strcasecmp.S	\
 		strstr.S	\
-		strpbrk.S
+		strpbrk.S	\
+		strcspn.S	\
+		rindex.S
 
 OBJS	=	$(addprefix srcs/, $(SRCS:.S=.o))
 
