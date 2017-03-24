@@ -3,23 +3,23 @@
 	section .text
 
 rindex:
-	xor rcx, rcx
+	MOV rax, 0
 
 loop:
-	cmp BYTE [rdi + rcx], 0
-	jz not_found
-	cmp BYTE [rdi + rcx], sil
-	jz found
-	inc rcx
-	jmp loop
+	CMP BYTE[RDI], SIL
+	JE loop_found
+	CMP BYTE[RDI], 0
+	JE end
+	INC RDI
+	JMP loop
 
-not_found:
-	mov rax, 0
-	jmp end
-
-found:
-	mov rax, rdi
-	add rax, rcx
+loop_found:
+	MOV RAX, RDI
+	INC RDI
+	CMP BYTE[RDI], 0
+	JE end
+	JMP loop
 
 end:
-	ret
+	RET
+	
