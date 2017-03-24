@@ -12,6 +12,8 @@ loop:
 	JE	end
 	CMP	RCX, RDX
 	JE	end_null
+	CMP	R8B, 0
+	JE	end_null
 	CMP	R9B, 0
 	JE	end_null
 	INC	RCX

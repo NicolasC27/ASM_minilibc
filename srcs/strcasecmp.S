@@ -8,6 +8,8 @@ strcasecmp:
 loop:
 	MOV	R8B, [RDI + RCX]
 	MOV	R9B, [RSI + RCX]
+	CMP	R8B, 0
+	JE	end_null
 	CMP	R9B, 0
 	JE	end_null
 	
