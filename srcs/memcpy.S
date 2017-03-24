@@ -5,10 +5,10 @@
 memcpy:
 	MOV	RCX, 0
 
-loop:
-	MOV	R10B, BYTE [RSI + RCX]
+loop:	
 	CMP	RCX, RDX
 	JE	end
+	MOV	R10B, BYTE [RSI + RCX]
 	MOV	BYTE [RDI + RCX], R10B
 	INC	RCX
 	JMP	loop
