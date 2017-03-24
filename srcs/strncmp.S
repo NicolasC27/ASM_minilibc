@@ -3,27 +3,36 @@
 	GLOBAL	strncmp:function
 
 strncmp:
+
 	MOV	RCX, 0
+	MOV	RAX, 0
 
 loop:
-	MOV	R8B, [RDI + RCX]
-	MOV	R9B, [RSI + RCX]
-	CMP	R8B, R9B
-	JE	end
+
 	CMP	RCX, RDX
-	JE	end_null
+	JE	end
+	MOV	R8B, [RDI]
+	MOV	R9B, [RSI]
 	CMP	R8B, 0
-	JE	end_null
-	CMP	R9B, 0
-	JE	end_null
+       	JE	strncmp_not_match
+       	CMP	R9B, 0
+       	JE	strncmp_not_match
+	CMP	R8B, R9B
+	JE	strncmp_match
+	JMP	strncmp_not_match
+
+strncmp_match:
+
+	INC	RDI
+	INC	RSI
 	INC	RCX
 	JMP	loop
 
-end_null:
-	MOV	RAX, 0
-	RET
+strncmp_not_match:
 
-end:
 	SUB	R8B, R9B
 	MOVSX	RAX, R8B
+
+end:
+
 	RET
