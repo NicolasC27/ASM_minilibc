@@ -1,6 +1,6 @@
 	BITS	64
 	SECTION	.text
-	GLOBAL	strcasecmp:function
+	GLOBAL	strcasecmp.S
 
 strcasecmp:
 	MOV	RCX, 0
