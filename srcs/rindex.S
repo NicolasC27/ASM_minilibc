@@ -6,19 +6,19 @@ rindex:
 	MOV rax, 0
 
 loop:
-	CMP BYTE[RDI], SIL
-	JE loop_found
-	CMP BYTE[RDI], 0
-	JE end
-	INC RDI
-	JMP loop
+	CMP 	BYTE[RDI], SIL
+	JE 	loop_found
+	CMP 	BYTE[RDI], 0
+	JE 	end
+	INC 	RDI
+	JMP 	loop
 
 loop_found:
-	MOV RAX, RDI
-	INC RDI
-	CMP BYTE[RDI], 0
-	JE end
-	JMP loop
+	MOV 	RAX, RDI
+	CMP 	BYTE[RDI], 0
+	JE 	end
+	INC 	RDI
+	JMP 	loop
 
 end:
 	RET
